@@ -8,6 +8,9 @@ module.exports = function (app, nus) {
 
   // index route
   app.route('/').all(function (req, res) {
+        res.redirect(301,'https://alaatv.com');
+  });
+  app.route('/shortlink').all(function (req, res) {
     res.render('index');
   });
 
