@@ -17,13 +17,13 @@
     "method-override": "^2.3.10",
     "morgan": "^1.9.0",
     "redis": "^2.8.0",
-    "yargs": "^11.0.0"
+    "yargs": "^16.2.0"
   },
   "devDependencies": {
     "expect.js": "^0.3.1",
     "fakeredis": "^1.0.3",
-    "mocha": "^2.5.3",
-    "superagent": "^2.0.0-alpha.3",
+    "mocha": "^8.3.0",
+    "superagent": "^6.1.0",
     "superagent-mocker": "^0.4.0"
   },
   "keywords": [
