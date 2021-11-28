@@ -14,6 +14,26 @@ module.exports = function (app, nus) {
     res.render('index');
   });
 
+  app.route('/analytics').all(function (req, res) {
+    nus.analytics("*",function(err,urls){
+      if(err){
+        res.status(500).json(err.toString);
+        return;
+      }
+      res.render('analytics',{urls:urls});
+    });
+  });
+
+  app.route('/analytics/:hash').all(function (req, res) {
+    nus.analytics(req.params.hash,function(err,urls){
+      if(err){
+        res.status(500).json(err.toString);
+        return;
+      }
+      res.render('analytics',{urls:urls});
+    });
+  });
+  
   // shorten route
   app.get(/^\/([\w=]+)$/, function (req, res, next){
     nus.expand(req.params[0], function (err, reply) {
