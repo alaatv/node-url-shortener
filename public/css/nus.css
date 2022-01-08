@@ -33,3 +33,8 @@ body{
   flex: inline;
   margin-right: 10px;
 }
+
+.analytics-table td {
+  max-width: 50vw;
+  overflow: auto;
+}
