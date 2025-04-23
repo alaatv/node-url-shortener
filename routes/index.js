@@ -6,6 +6,10 @@ module.exports = function (app, nus) {
   // api routes
   app.use('/api/v1', api);
 
+  // healthcheck route
+  app.get('/healthcheck', function (req, res) {
+    res.status(200).json({ status: 'OK' });
+  });
   // index route
   app.route('/').all(function (req, res) {
         res.redirect(301,'https://alaatv.com');
@@ -45,6 +49,7 @@ module.exports = function (app, nus) {
     }, true);
   });
 
+    
   // catch 404 and forwarding to error handler
   app.use(function(req, res, next) {
     var err = new Error('Not Found');
