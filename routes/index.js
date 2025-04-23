@@ -44,7 +44,12 @@ module.exports = function (app, nus) {
       }
     }, true);
   });
-
+    
+  // healthcheck route
+  app.get('/healthcheck', function (req, res) {
+    res.status(200).json({ status: 'OK' });
+  });
+    
   // catch 404 and forwarding to error handler
   app.use(function(req, res, next) {
     var err = new Error('Not Found');
